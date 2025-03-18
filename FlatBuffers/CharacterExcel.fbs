@@ -1,0 +1,266 @@
+include "Common.fbs";
+
+namespace Ivaldi.FlatBuffers.CharacterExcel;
+
+enum Rarity: int
+{
+    N = 0,
+    R = 1,
+    SR = 2,
+    SSR = 3
+}
+
+enum TacticEntityType : int
+{
+    None = 0,
+    Student = 1,
+    Minion = 2,
+    Elite = 4,
+    Champion = 8,
+    Boss = 16,
+    Obstacle = 32,
+    Servant = 64,
+    Vehicle = 128,
+    Summoned = 256,
+    Hallucination = 512,
+    DestructibleProjectile = 1024
+}
+
+enum TacticRole : int
+{
+    None = 0,
+    DamageDealer = 1,
+    Tanker = 2,
+    Supporter = 3,
+    Healer = 4,
+    Vehicle = 5
+}
+
+enum WeaponType : int
+{
+    None = 0,
+    SG = 1,
+    SMG = 2,
+    AR = 3,
+    GL = 4,
+    HG = 5,
+    RL = 6,
+    SR = 7,
+    DSMG = 8,
+    RG = 9,
+    DSG = 10,
+    Vulcan = 11,
+    Missile = 12,
+    Cannon = 13,
+    Taser = 14,
+    MG = 15,
+    Binah = 16,
+    MT = 17,
+    Relic = 18,
+    FT = 19,
+    Akemi = 20
+}
+
+enum TacticRange : int
+{
+    Back = 0,
+    Front = 1,
+    Middle = 2
+}
+
+enum BulletType : int
+{
+    Normal = 0,
+    Pierce = 1,
+    Explosion = 2,
+    Siege = 3,
+    Mystic = 4,
+    None = 5,
+    Sonic = 6
+}
+
+enum ArmorType : int
+{
+    LightArmor = 0,
+    HeavyArmor = 1,
+    Unarmed = 2,
+    Structure = 3,
+    Normal = 4,
+    ElasticArmor = 5
+}
+
+enum AimIKType : int
+{
+    None = 0,
+    OneHandRight = 1,
+    OneHandLeft = 2,
+    TwoHandRight = 3,
+    TwoHandLeft = 4,
+    Tripod = 5,
+    Dual = 6,
+    Max = 7
+}
+
+enum School : int
+{
+    None = 0,
+    Hyakkiyako = 1,
+    RedWinter = 2,
+    Trinity = 3,
+    Gehenna = 4,
+    Abydos = 5,
+    Millennium = 6,
+    Arius = 7,
+    Shanhaijing = 8,
+    Valkyrie = 9,
+    WildHunt = 10,
+    SRT = 11,
+    SCHALE = 12,
+    ETC = 13,
+    Tokiwadai = 14,
+    Sakugawa = 15
+}
+
+enum Club : int
+{
+    None = 0,
+    Engineer = 1,
+    CleanNClearing = 2,
+    KnightsHospitaller = 3,
+    IndeGEHENNA = 4,
+    IndeMILLENNIUM = 5,
+    IndeHyakkiyako = 6,
+    IndeShanhaijing = 7,
+    IndeTrinity = 8,
+    FoodService = 9,
+    Countermeasure = 10,
+    BookClub = 11,
+    MatsuriOffice = 12,
+    GourmetClub = 13,
+    HoukagoDessert = 14,
+    RedwinterSecretary = 15,
+    Schale = 16,
+    TheSeminar = 17,
+    AriusSqud = 18,
+    Justice = 19,
+    Fuuki = 20,
+    Kohshinjo68 = 21,
+    Meihuayuan = 22,
+    SisterHood = 23,
+    GameDev = 24,
+    anzenkyoku = 25,
+    RemedialClass = 26,
+    SPTF = 27,
+    TrinityVigilance = 28,
+    Veritas = 29,
+    TrainingClub = 30,
+    Onmyobu = 31,
+    Shugyobu = 32,
+    Endanbou = 33,
+    NinpoKenkyubu = 34,
+    Class227 = 35,
+    EmptyClub = 36,
+    Emergentology = 37,
+    RabbitPlatoon = 38,
+    PandemoniumSociety = 39,
+    HotSpringsDepartment = 40,
+    TeaParty = 41,
+    PublicPeaceBureau = 42,
+    Genryumon = 43,
+    BlackTortoisePromenade = 44,
+    LaborParty = 45,
+    KnowledgeLiberationFront = 46,
+    Hyakkayouran = 47,
+    ShinySparkleSociety = 48,
+    AbydosStudentCouncil = 49
+}
+
+enum StatLevelUpType : int
+{
+    Standard = 0,
+    Premature = 1,
+    LateBloom = 2,
+    Obstacle = 3,
+    TimeAttack = 4
+}
+
+enum SquadType : int
+{
+    None = 0,
+    Main = 1,
+    Support = 2,
+    TSS = 3
+}
+
+table CharacterExcelTable
+{
+    DataList: [CharacterExcel];
+}
+
+table CharacterExcel {
+    Id: long;
+    DevName: string;
+    CostumeGroupId: long;
+    IsPlayable: bool;
+    ProductionStep: Ivaldi.FlatBuffers.Common.ProductionStep;
+    CollectionVisible: bool;
+    ReleaseDate: string;
+    CollectionVisibleStartDate: string;
+    CollectionVisibleEndDate: string;
+    IsPlayableCharacter: bool;
+    LocalizeEtcId: uint;
+    Rarity: Rarity;
+    IsNPC: bool;
+    TacticEntityType: TacticEntityType;
+    CanSurvive: bool;
+    IsDummy: bool;
+    SubPartsCount: int;
+    TacticRole: TacticRole;
+    WeaponType: WeaponType;
+    TacticRange: TacticRange;
+    BulletType: BulletType;
+    ArmorType: ArmorType;
+    AimIKType: AimIKType;
+    School: School;
+    Club: Club;
+    DefaultStarGrade: int;
+    MaxStarGrade: int;
+    StatLevelUpType: StatLevelUpType;
+    SquadType: SquadType;
+    Jumpable: bool;
+    PersonalityId: long;
+    CharacterAIId: long;
+    ExternalBTId: long;
+    MainCombatStyleId: long;
+    CombatStyleIndex: int;
+    ScenarioCharacter: string;
+    SpawnTemplateId: uint;
+    FavorLevelupType: int;
+    EquipmentSlotLength: int;
+    WeaponLocalizeId: uint;
+    DisplayEnemyInfo: bool;
+    BodyRadius: long;
+    RandomEffectRadius: long;
+    HPBarHide: bool;
+    HpBarHeight: float;
+    HighlightFloaterHeight: float;
+    EmojiOffsetX: float;
+    EmojiOffsetY: float;
+    MoveStartFrame: int;
+    MoveEndFrame: int;
+    JumpMotionFrame: int;
+    AppearFrame: int;
+    CanMove: bool;
+    CanFix: bool;
+    CanCrowdControl: bool;
+    CanBattleItemMove: bool;
+    IsAirUnit: bool;
+    AirUnitHeight: long;
+    TagsLength: int;
+    SecretStoneItemId: long;
+    SecretStoneItemAmount: int;
+    CharacterPieceItemId: long;
+    CharacterPieceItemAmount: int;
+    CombineRecipeId: long;
+}
+root_type CharacterExcelTable;

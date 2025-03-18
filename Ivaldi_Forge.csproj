@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AssetsTools.NET" Version="3.0.0" />
+    <PackageReference Include="Colorful.Console" Version="1.2.15" />
+    <PackageReference Include="Crc32" Version="1.1.0" />
+    <PackageReference Include="Google.FlatBuffers" Version="25.2.10" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.12" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="MemoryPack" Version="1.21.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.28.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="133.0.6943.9800" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+    <PackageReference Include="xxHash.NET" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

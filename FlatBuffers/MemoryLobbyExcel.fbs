@@ -1,0 +1,23 @@
+include "Common.fbs";
+
+namespace Ivaldi.FlatBuffers.MemoryLobbyExcel;
+
+enum MemoryLobbyCategory: int {
+    None = 0,
+    UILobbySpecial = 1,
+    UILobbySpecial2 = 2
+}
+
+table MemoryLobbyExcel {
+    Id: long;
+    ProductionStep: Ivaldi.FlatBuffers.Common.ProductionStep;
+    LocalizeEtcId: uint;
+    CharacterId: long;
+    PrefabName: string;
+    MemoryLobbyCategory: MemoryLobbyCategory;
+    SlotTextureName: string;
+    RewardTextureName: string;
+    BGMId: long;
+    AudioClipJp: string;
+    AudioClipKr: string;
+}

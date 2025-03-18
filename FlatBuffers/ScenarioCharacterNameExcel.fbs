@@ -1,0 +1,24 @@
+include "Common.fbs";
+
+namespace Ivaldi.FlatBuffers.ScenarioCharacterNameExcel;
+
+enum ScenarioCharacterShapes: int {
+    None = 0,
+    Signal = 1,
+    BlackSilhouette = 2,
+    Closeup = 4,
+    Highlight = 8,
+    WhiteSilhouette = 16
+}
+
+table ScenarioCharacterNameExcel {
+    characterName: uint;
+    productionStep: Ivaldi.FlatBuffers.Common.ProductionStep;
+    nameKR: string;
+    nicknameKR: string;
+    nameJP: string;
+    nicknameJP: string;
+    shape: ScenarioCharacterShapes;
+    spinePrefabName: string;
+    smallPortrait: string;
+}

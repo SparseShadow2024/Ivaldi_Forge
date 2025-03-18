@@ -1,0 +1,22 @@
+namespace Ivaldi.FlatBuffers.AcademyFavorScheduleExcel;
+
+table AcademyFavorScheduleExcelTable
+{
+    DataList: [AcademyFavorScheduleExcel];
+}
+
+table AcademyFavorScheduleExcel 
+{
+	Id: long;
+	CharacterId: long;
+	ScheduleGroupId: long;
+	OrderInGroup: long;
+	Location: string;
+	LocalizeScenarioId: uint;
+	FavorRan: long;
+	SecretStoneAmount: long;
+	ScenarioSriptGroupId: long;
+	RewardParcelTypeLength: int;
+	RewardParcelIdLength: int;
+	RewardAmountLength: int;
+}

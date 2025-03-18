@@ -1,0 +1,36 @@
+namespace Ivaldi.FlatBuffers.AnimatorDataTable;
+
+table AnimatorDataTable {
+    DataList:[AnimatorData];
+}
+
+table AnimatorData {
+    DefaultStateName:string;
+    Name:string;
+    DataList:[AniStateData];
+}
+
+table AniStateData {
+    StateName:string;
+    StatePrefix:string;
+    StateNameWithPrefix:string;
+    Tag:string;
+    SpeedParameterName:string;
+    SpeedParamter:float;
+    StateSpeed:float;
+    ClipName:string;
+    Length:float;
+    FrameRate:float;
+    IsLooping:bool;
+    Events:[AniEventData];
+}
+
+table AniEventData {
+    Name:string;
+    Time:float;
+    IntParam:int;
+    FloatParam:float;
+    StringParam:string;
+}
+
+root_type AnimatorDataTable;
